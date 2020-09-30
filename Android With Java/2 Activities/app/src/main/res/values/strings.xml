@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">p3</string>
+    <string name="visit">Call Second Activity</string>
+    <string name="enter_link">enter link</string>
+    <string name="call_first_activity">call First Activity</string>
+    <string name="second_activity">Second Activity</string>
+</resources>
