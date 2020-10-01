@@ -1,0 +1,6 @@
+<svg xmlns:svg="https://www.w3.org/2000/svg"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200">
+<img height="30" width="30"
+xlink:href="Your Server Ip / USe ngrok or burp collabrator" />
+</svg>
