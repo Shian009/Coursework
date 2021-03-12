@@ -1,0 +1,12 @@
+splitposneg([],[],[]).
+splitposneg([X|Xs], [X|P], N) :-
+                                 X>=0,
+                                 splitposneg(Xs, P, N).
+splitposneg([X|Xs], P, [X|N]) :-
+                                 X<0,
+                                 splitposneg(Xs, P, N).
+mymain:- write('Enter the list: '),read(L),nl,
+       splitposneg(L,L1,L2),
+       write('Positive sublist is: '),write(L1),nl,
+       write('Negative sublist is: '),write(L2).
+

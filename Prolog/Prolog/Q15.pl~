@@ -1,0 +1,24 @@
+even_length([]).
+even_length([_|T]):- odd_length(T).
+odd_length([_]).
+odd_length([_|T]):- even_length(T).
+main:-write('Enter the list: '),read(L),nl,
+      write('1-Check even length\n2-Check odd length'),nl,
+      write('Enter your choice: '),read(C),nl,
+      ((C==1)->even_length(L),
+       write('List is of even length');
+      odd_length(L),write('List is of odd length')).
+
+
+
+lengthoflist([],0).
+lengthoflist([_|T],N):-lengthoflist(T,N1),
+                       N is N1+1.
+oddeven(List):- lengthoflist(List,N),
+                N>0 ->(
+                L1 is mod(N,2),
+                L1=:=0->
+                write("Even length list");
+                write("Odd length list")
+                );
+                write("List is empty").

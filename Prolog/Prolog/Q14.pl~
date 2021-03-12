@@ -1,0 +1,7 @@
+sumoflist([],0).
+sumoflist([H|T],Mysum):- sumoflist(T,N),
+                   Mysum is H+N.
+main:-write("Enter your list "),
+     read(L),
+     sumoflist(L,X),
+     write(" Sum of elements in the list: "),write(X).
