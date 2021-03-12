@@ -1,0 +1,63 @@
+male(rudra).
+male(sarvesh).
+male(janki).
+male(kapil).
+male(dinesh).
+male(ramkishan).
+female(atarkali).
+female(sukrati).
+female(vibhuti).
+female(vinita).
+female(munni).
+female(parul).
+female(meenakshi).
+parent(sarvesh,rudra).
+parent(sarvesh,sukrati).
+parent(sarvesh,vibhuti).
+parent(vinita,rudra).
+parent(vinita,sukrati).
+parent(vinita,vibhuti).
+parent(janki,parul).
+parent(janki,vinita).
+parent(janki,kapil).
+parent(munni,parul).
+parent(munni,vinita).
+parent(munni,kapil).
+parent(ramkishan,sarvesh).
+parent(ramkishan,meenakshi).
+parent(ramkishan,dinesh).
+parent(atarkali,sarvesh).
+parent(atarkali,meenakshi).
+parent(atarkali,dinesh).
+father(X,Y):-male(X),
+             parent(X,Y).
+mother(X,Y):-female(X),
+             parent(X,Y).
+parents(X,Y,Z):-father(X,Z),
+                mother(Y,Z).
+grandfather(X,Y):-male(X),
+                  parent(X,Z),
+                  parent(Z,Y).
+grandmother(X,Y):-female(X),
+                  parent(X,Z),
+                  parent(Z,Y).
+grandparents(X,Y,Z):-grandfather(X,Z),
+                     grandmother(Y,Z).
+sibling(X,Y):-parent(Z,X),
+              parent(Z,Y).
+sister(X,Y):-female(X),
+             sibling(X,Y).
+brother(X,Y):-male(X),
+              sibling(X,Y).
+aunt(X,Y):-not(parent(X,Y)),
+           female(X),
+           parent(Z,Y),
+           sister(X,Z).
+uncle(X,Y):-not(parent(X,Y)),
+            male(X),
+            parent(Z,Y),
+            brother(X,Z).
+ancestor(X,Y):-parent(X,Y).
+ancestor(X,Y):-parent(X,Z),
+               ancestor(Z,Y).
+offspring(X,Y):-parent(Y,X).

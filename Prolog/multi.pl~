@@ -1,0 +1,2 @@
+multi(A,B):- R is (A*B),
+             write(R).

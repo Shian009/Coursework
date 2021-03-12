@@ -1,0 +1,12 @@
+
+power1(X,Y,Result):-
+              Result is X**Y.
+
+myinput(X,Y):-write('Enter Number: '), nl,
+       read(X),nl,
+       write('Enter Power: '), nl,
+       read(Y), nl.
+
+power:-myinput(Num,Pow),
+       power1(Num, Pow, Ans),
+       write(Num), write(' ** '), write(Pow), write(' = '), write(Ans).
